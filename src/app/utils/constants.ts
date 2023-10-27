@@ -17,7 +17,7 @@ export const items: InventoryItem[] = [
     size: 10,
     value: 150,
     priority: 2,
-    dependencies: ["laptop"],
+    dependencies: [],
   },
   {
     name: "Flat-screen TV",
@@ -45,7 +45,7 @@ export const items: InventoryItem[] = [
     size: 5,
     value: 1000,
     priority: 1,
-    dependencies: ["kitchen table", "Oil Painting"],
+    dependencies: [],
   },
   {
     name: "Kitchen Table",
