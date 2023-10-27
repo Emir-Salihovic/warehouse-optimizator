@@ -19,3 +19,8 @@ export interface AlertOptions {
   severity: Severity;
   hideAfter: number;
 }
+
+export enum Anchor {
+  Top = "top",
+  Bottom = "bottom",
+}

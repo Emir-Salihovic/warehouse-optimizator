@@ -11,7 +11,7 @@ const SelectedItemList: React.FC<SelectedItemListProps> = ({
 }) => {
   return (
     <>
-      <h2 className="font-bold text-2xl mt-4">
+      <h2 className="font-bold text-2xl my-4">
         Selected items ({selectedItems.length})
       </h2>
       <div className="grid grid-cols-6 gap-4">
@@ -19,7 +19,7 @@ const SelectedItemList: React.FC<SelectedItemListProps> = ({
           return (
             <div
               key={itemIndex}
-              className="my-4 border-2 border-green-500 rounded-md p-4"
+              className="mb-2 border-2 border-green-500 rounded-md p-4"
             >
               <div>
                 <span className="font-bold text-lg">{item.name}</span>

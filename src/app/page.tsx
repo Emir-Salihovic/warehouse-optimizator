@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { AlertOptions, InventoryItem, Severity } from "./types";
+import { AlertOptions, Anchor, InventoryItem, Severity } from "./types";
 import { items, total_space } from "./utils/constants";
 import { calculateCurrentWarehouseSize } from "./utils/calculateWarehouseSize";
 import { findLowestValueItem } from "./utils/findLowestValueItem";
@@ -10,6 +10,7 @@ import { deleteParentItems } from "./utils/deleteParentIndexes";
 import SizeBoard from "./components/sizeBoard";
 import SelectedItemList from "./components/selectedItemList";
 import Alert from "./components/alert";
+import ScrollToAnchor from "./components/scrollToAnchor";
 
 const groundedItems = items.map((item: InventoryItem) => {
   return {
@@ -27,6 +28,7 @@ export default function Home() {
   const [selectedItems, setSelectedItems] = useState<InventoryItem[]>([]);
   const [warehouseLimitReached, setWarehouseLimitReached] =
     useState<boolean>(false);
+  const [scrollAnchor, setScrollAnchor] = useState<Anchor>(Anchor.Bottom);
 
   const [alertOptions, setAlertOptions] = useState<AlertOptions>({
     message: "",
@@ -249,6 +251,7 @@ export default function Home() {
         />
       )}
 
+      <ScrollToAnchor anchor={scrollAnchor} setScrollAnchor={setScrollAnchor} />
       <SizeBoard
         selectedItems={selectedItems}
         warehouseLimitReached={warehouseLimitReached}
